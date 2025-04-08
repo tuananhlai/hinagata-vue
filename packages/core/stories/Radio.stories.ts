@@ -18,7 +18,7 @@ export const Default: Story = {
       return { value };
     },
     components: { Radio, RadioGroup },
-    template: `<RadioGroup v-model="value" orientation="horizontal">
+    template: `<RadioGroup v-model="value">
       <Radio value="one">Option 1</Radio>
       <Radio value="two">Option 2</Radio>
       <Radio value="three">Option 3</Radio>
