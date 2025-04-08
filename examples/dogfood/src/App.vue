@@ -3,12 +3,15 @@ import {
   Button,
   Checkbox,
   CheckboxGroupField,
+  Radio,
+  RadioGroup,
   TextField,
+  type CheckboxProps,
   type TextFieldExpose,
 } from "@tuananhlai/sample-design-system";
 import { ref, useTemplateRef } from "vue";
 
-const isChecked = ref(false);
+const isChecked = ref<CheckboxProps["modelValue"]>(false);
 
 const textFieldRef = useTemplateRef<TextFieldExpose>("text-field-ref");
 
@@ -36,6 +39,11 @@ const focus = () => {
         </p>
       </template>
     </CheckboxGroupField>
+    <RadioGroup>
+      <Radio value="one">Option 1</Radio>
+      <Radio value="two">Option 2</Radio>
+      <Radio value="three">Option 3</Radio>
+    </RadioGroup>
   </div>
 </template>
 

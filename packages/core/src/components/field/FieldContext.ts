@@ -34,7 +34,7 @@ export const provideFieldContext = (value: FieldContextValue) => {
 };
 
 export const useFieldContext = (): FieldContextValue | undefined => {
-  return inject<FieldContextValue>(contextKey);
+  return inject<FieldContextValue | undefined>(contextKey, undefined);
 };
 
 /**

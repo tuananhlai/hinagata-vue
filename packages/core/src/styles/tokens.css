@@ -175,6 +175,8 @@
 
   --bw-checkbox-background-color: var(--bw-color-white);
   --bw-checkbox-checked-background-color: var(--bw-color-primary);
+  --bw-radio-background-color: var(--bw-color-white);
+  --bw-radio-checked-background-color: var(--bw-color-primary);
 }
 
 :root[data-theme="fuchsia"] {
@@ -192,4 +194,6 @@
 
   --bw-checkbox-background-color: var(--bw-color-white);
   --bw-checkbox-checked-background-color: var(--bw-color-primary);
+  --bw-radio-background-color: var(--bw-color-white);
+  --bw-radio-checked-background-color: var(--bw-color-primary);
 }
