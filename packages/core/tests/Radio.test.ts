@@ -109,6 +109,35 @@ describe("WAI-ARIA compliance", () => {
     );
   });
 
+  it("should set all radios to `required` when `required` is set and no radio is checked", () => {
+    render(RadioGroup, {
+      props: {
+        required: true,
+      },
+      slots: {
+        default: h({
+          template: `
+            <Radio value="one">Option 1</Radio>
+            <Radio value="two">Option 2</Radio>
+          `,
+          components: { Radio },
+        }),
+      },
+    });
+
+    // We can not use `toBeRequired` matcher because it does not support buttons with role="radio".
+    // The following issue is about buttons with role "checkbox", but the problem is the same.
+    // https://github.com/testing-library/jest-dom/issues/481
+    expect(screen.getByRole("radio", { name: "Option 1" })).toHaveAttribute(
+      "required",
+      "true"
+    );
+    expect(screen.getByRole("radio", { name: "Option 2" })).toHaveAttribute(
+      "required",
+      "true"
+    );
+  });
+
   describe("keyboard interactions", () => {
     it("should move focus to checked radio when tabbing in", async () => {
       render(RadioGroup, {
@@ -174,7 +203,7 @@ describe("WAI-ARIA compliance", () => {
    * failing only in JSDOM environment, not in real browsers, including:
    * - should move focus and check radio when pressing ArrowRight / ArrowLeft / ArrowUp / ArrowDown.
    * - should loop focus from last to first and vice versa.
-   * 
+   *
    * I will need to take a look at this later.
    */
 });
