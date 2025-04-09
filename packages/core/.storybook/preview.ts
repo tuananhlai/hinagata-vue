@@ -10,6 +10,12 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    // Disable Chromatic snapshotting behavior by default
+    // to save on Chromatic credits. It should be enabled
+    // manually for stories that need it.
+    chromatic: {
+      disableSnapshot: true,
+    },
   },
 };
 

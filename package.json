@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "release": "pnpm --filter @tuananhlai/sample-design-system run build && changeset publish",
-    "generate": "plop"
+    "generate": "plop",
+    "storybook:core": "pnpm --filter @tuananhlai/sample-design-system run storybook"
   },
   "keywords": [],
   "author": "Andy",
