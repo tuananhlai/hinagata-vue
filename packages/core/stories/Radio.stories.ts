@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { Radio, RadioGroup } from "../src";
+import { Radio, RadioGroup, RadioGroupField } from "../src";
 
 const meta = {
   title: "Radio",
@@ -21,11 +21,14 @@ export const Default: Story = {
   }),
 };
 
-export const VisualTest: Story = {
+export const Field: Story = {
   render: () => ({
-    components: { Radio },
-    template: `<div>
-
-    </div>`,
+    components: { RadioGroupField, Radio },
+    template: `<RadioGroupField label="Radio Group" description="Description" errorMessage="Error Message">
+      <Radio value="one">Option 1</Radio>
+      <Radio value="two">Option 2</Radio>
+      <Radio value="three">Option 3</Radio>
+    </RadioGroupField>
+  `,
   }),
 };

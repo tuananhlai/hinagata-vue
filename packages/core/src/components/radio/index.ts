@@ -8,3 +8,10 @@ export type {
   RadioGroupSlots
 } from "./RadioGroup.vue";
 
+export { default as RadioGroupField } from "./RadioGroupField.vue";
+export type {
+  RadioGroupFieldEmits,
+  RadioGroupFieldProps,
+  RadioGroupFieldSlots
+} from "./RadioGroupField.vue";
+
