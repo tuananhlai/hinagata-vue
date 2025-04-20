@@ -25,9 +25,9 @@ export interface ButtonBaseProps extends AriaLabellingProps {
   type?: "button" | "submit" | "reset";
 
   /** Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed */
-  "aria-expanded"?: boolean | "true" | "false";
+  ariaExpanded?: boolean | "true" | "false";
   /** Indicates the availability and type of interactive popup element that can be triggered */
-  "aria-haspopup"?:
+  ariaHaspopup?:
     | boolean
     | "menu"
     | "listbox"
@@ -37,11 +37,11 @@ export interface ButtonBaseProps extends AriaLabellingProps {
     | "true"
     | "false";
   /** Identifies the element(s) whose contents or presence are controlled by the current element */
-  "aria-controls"?: string;
+  ariaControls?: string;
   /** Indicates the current "pressed" state of toggle buttons */
-  "aria-pressed"?: boolean | "true" | "false" | "mixed";
+  ariaPressed?: boolean | "true" | "false" | "mixed";
   /** Indicates whether this element represents the current item within a container or set of related elements */
-  "aria-current"?:
+  ariaCurrent?:
     | boolean
     | "true"
     | "false"
@@ -95,15 +95,15 @@ const doWhileNotLoading = (fn: () => void) => {
     :value="value"
     :disabled="disabled"
     :type="type"
-    :aria-expanded="props['aria-expanded']"
-    :aria-haspopup="props['aria-haspopup']"
-    :aria-controls="props['aria-controls']"
-    :aria-pressed="props['aria-pressed']"
-    :aria-current="props['aria-current']"
-    :aria-label="props['aria-label']"
-    :aria-labelledby="props['aria-labelledby']"
-    :aria-describedby="props['aria-describedby']"
-    :aria-details="props['aria-details']"
+    :aria-expanded="props.ariaExpanded"
+    :aria-haspopup="props.ariaHaspopup"
+    :aria-controls="props.ariaControls"
+    :aria-pressed="props.ariaPressed"
+    :aria-current="props.ariaCurrent"
+    :aria-label="props.ariaLabel"
+    :aria-labelledby="props.ariaLabelledby"
+    :aria-describedby="props.ariaDescribedby"
+    :aria-details="props.ariaDetails"
     :aria-disabled="loading ? true : undefined"
     @click="(e: MouseEvent) => doWhileNotLoading(() => emit('click', e))"
     @focus="(e) => emit('focus', e)"

@@ -13,7 +13,7 @@ export interface CheckboxGroupProps
   orientation?: "horizontal" | "vertical";
 
   /** Identifies the element that provides an error message for the object. */
-  "aria-errormessage"?: string;
+  ariaErrormessage?: string;
 }
 
 export interface CheckboxGroupEmits extends CheckboxGroupRootEmits {}
@@ -64,17 +64,17 @@ const fieldContextValue = useFieldContext();
     v-bind="forwarded"
     :data-invalid="invalid || undefined"
     :aria-invalid="invalid"
-    :aria-label="props['aria-label']"
+    :aria-label="props.ariaLabel"
     :aria-labelledby="
-      clsx(props['aria-labelledby'], fieldContextValue?.labelledBy.value) ||
+      clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
       undefined
     "
     :aria-describedby="
-      clsx(props['aria-describedby'], fieldContextValue?.describedBy.value) ||
+      clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
       undefined
     "
-    :aria-details="props['aria-details']"
-    :aria-errormessage="props['aria-errormessage']"
+    :aria-details="props.ariaDetails"
+    :aria-errormessage="props.ariaErrormessage"
   >
     <slot />
   </CheckboxGroupRoot>
