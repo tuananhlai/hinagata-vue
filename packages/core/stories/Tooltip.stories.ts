@@ -23,12 +23,3 @@ export const Default: Story = {
     </Tooltip>`,
   }),
 };
-
-export const VisualTest: Story = {
-  render: () => ({
-    components: { Tooltip },
-    template: `<div>
-
-    </div>`,
-  }),
-};
