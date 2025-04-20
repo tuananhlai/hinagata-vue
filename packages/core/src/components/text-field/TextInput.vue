@@ -96,11 +96,11 @@ import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 import clsx from "clsx";
 import { useId } from "reka-ui";
 import {
-  HTMLAttributes,
-  InputHTMLAttributes,
-  onMounted,
-  onUnmounted,
-  useTemplateRef,
+    HTMLAttributes,
+    InputHTMLAttributes,
+    onMounted,
+    onUnmounted,
+    useTemplateRef,
 } from "vue";
 import { useFieldContext } from "../field/FieldContext";
 
@@ -150,20 +150,20 @@ defineExpose<TextInputExpose>({
       :inputmode="inputmode"
       :data-invalid="invalid || undefined"
       :aria-invalid="invalid"
-      :aria-label="props['aria-label']"
+      :aria-label="props['ariaLabel']"
       :aria-labelledby="
-        clsx(props['aria-labelledby'], fieldContextValue?.labelledBy.value) ||
+        clsx(props['ariaLabelledby'], fieldContextValue?.labelledBy.value) ||
         undefined
       "
       :aria-describedby="
-        clsx(props['aria-describedby'], fieldContextValue?.describedBy.value) ||
+        clsx(props['ariaDescribedby'], fieldContextValue?.describedBy.value) ||
         undefined
       "
       :aria-activedescendant="props['aria-activedescendant']"
       :aria-autocomplete="props['aria-autocomplete']"
       :aria-haspopup="props['aria-haspopup']"
       :aria-controls="props['aria-controls']"
-      :aria-details="props['aria-details']"
+      :aria-details="props['ariaDetails']"
       :aria-errormessage="props['aria-errormessage']"
       @input="onInput"
       @blur="(e) => emits('blur', e)"
