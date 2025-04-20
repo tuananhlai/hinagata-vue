@@ -7,7 +7,7 @@ export interface RadioGroupProps
   /** Whether the input value is invalid. */
   invalid?: boolean;
   /** Identifies the element that provides an error message for the object. */
-  "aria-errormessage"?: string;
+  ariaErrormessage?: string;
 }
 
 export interface RadioGroupEmits extends RadioGroupRootEmits {}
@@ -21,10 +21,10 @@ export interface RadioGroupSlots {
 import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 import clsx from "clsx";
 import {
-    RadioGroupRoot,
-    RadioGroupRootEmits,
-    RadioGroupRootProps,
-    useForwardPropsEmits,
+  RadioGroupRoot,
+  RadioGroupRootEmits,
+  RadioGroupRootProps,
+  useForwardPropsEmits,
 } from "reka-ui";
 import { useFieldContext } from "../field/FieldContext";
 
@@ -44,17 +44,17 @@ const fieldContextValue = useFieldContext();
     v-bind="forwardedPropEmits"
     :data-invalid="invalid || undefined"
     :aria-invalid="invalid"
-    :aria-label="props['ariaLabel']"
+    :aria-label="props.ariaLabel"
     :aria-labelledby="
-      clsx(props['ariaLabelledby'], fieldContextValue?.labelledBy.value) ||
+      clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
       undefined
     "
     :aria-describedby="
-      clsx(props['ariaDescribedby'], fieldContextValue?.describedBy.value) ||
+      clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
       undefined
     "
-    :aria-details="props['ariaDetails']"
-    :aria-errormessage="props['aria-errormessage']"
+    :aria-details="props.ariaDetails"
+    :aria-errormessage="props.ariaErrormessage"
   >
     <slot />
   </RadioGroupRoot>

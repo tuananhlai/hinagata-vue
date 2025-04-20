@@ -58,20 +58,20 @@ export interface TextInputProps extends AriaLabellingProps {
   inputmode?: HTMLAttributes["inputmode"];
 
   /** Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application. */
-  "aria-activedescendant"?: string;
+  ariaActivedescendant?: string;
   /**
    * Indicates whether inputting text could trigger display of predictions of the user's intended value,
    * and specifies how predictions would be presented if they are made.
    */
-  "aria-autocomplete"?: InputHTMLAttributes["aria-autocomplete"];
+  ariaAutocomplete?: InputHTMLAttributes["aria-autocomplete"];
   /**
    * Indicates the availability and type of interactive popup element that can be triggered.
    */
-  "aria-haspopup"?: InputHTMLAttributes["aria-haspopup"];
+  ariaHaspopup?: InputHTMLAttributes["aria-haspopup"];
   /** Identifies the element(s) whose contents or presence are controlled by the current element. */
-  "aria-controls"?: string;
+  ariaControls?: string;
   /** Identifies the element that provides an error message for the object. */
-  "aria-errormessage"?: string;
+  ariaErrormessage?: string;
 }
 
 export interface TextInputEmits {
@@ -150,21 +150,21 @@ defineExpose<TextInputExpose>({
       :inputmode="inputmode"
       :data-invalid="invalid || undefined"
       :aria-invalid="invalid"
-      :aria-label="props['ariaLabel']"
+      :aria-label="props.ariaLabel"
       :aria-labelledby="
-        clsx(props['ariaLabelledby'], fieldContextValue?.labelledBy.value) ||
+        clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
         undefined
       "
       :aria-describedby="
-        clsx(props['ariaDescribedby'], fieldContextValue?.describedBy.value) ||
+        clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
         undefined
       "
-      :aria-activedescendant="props['aria-activedescendant']"
-      :aria-autocomplete="props['aria-autocomplete']"
-      :aria-haspopup="props['aria-haspopup']"
-      :aria-controls="props['aria-controls']"
-      :aria-details="props['ariaDetails']"
-      :aria-errormessage="props['aria-errormessage']"
+      :aria-activedescendant="props.ariaActivedescendant"
+      :aria-autocomplete="props.ariaAutocomplete"
+      :aria-haspopup="props.ariaHaspopup"
+      :aria-controls="props.ariaControls"
+      :aria-details="props.ariaDetails"
+      :aria-errormessage="props.ariaErrormessage"
       @input="onInput"
       @blur="(e) => emits('blur', e)"
       @change="(e) => emits('change', e)"

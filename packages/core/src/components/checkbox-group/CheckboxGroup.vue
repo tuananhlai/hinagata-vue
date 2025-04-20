@@ -13,7 +13,7 @@ export interface CheckboxGroupProps
   orientation?: "horizontal" | "vertical";
 
   /** Identifies the element that provides an error message for the object. */
-  "aria-errormessage"?: string;
+  ariaErrormessage?: string;
 }
 
 export interface CheckboxGroupEmits extends CheckboxGroupRootEmits {}
@@ -37,10 +37,10 @@ export default {};
 import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 import clsx from "clsx";
 import {
-    CheckboxGroupRoot,
-    CheckboxGroupRootEmits,
-    CheckboxGroupRootProps,
-    useForwardPropsEmits,
+  CheckboxGroupRoot,
+  CheckboxGroupRootEmits,
+  CheckboxGroupRootProps,
+  useForwardPropsEmits,
 } from "reka-ui";
 import { useFieldContext } from "../field/FieldContext";
 
@@ -64,17 +64,17 @@ const fieldContextValue = useFieldContext();
     v-bind="forwarded"
     :data-invalid="invalid || undefined"
     :aria-invalid="invalid"
-    :aria-label="props['ariaLabel']"
+    :aria-label="props.ariaLabel"
     :aria-labelledby="
-      clsx(props['ariaLabelledby'], fieldContextValue?.labelledBy.value) ||
+      clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
       undefined
     "
     :aria-describedby="
-      clsx(props['ariaDescribedby'], fieldContextValue?.describedBy.value) ||
+      clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
       undefined
     "
-    :aria-details="props['ariaDetails']"
-    :aria-errormessage="props['aria-errormessage']"
+    :aria-details="props.ariaDetails"
+    :aria-errormessage="props.ariaErrormessage"
   >
     <slot />
   </CheckboxGroupRoot>
