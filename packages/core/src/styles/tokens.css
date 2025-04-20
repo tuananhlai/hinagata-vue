@@ -175,8 +175,13 @@
 
   --bw-checkbox-background-color: var(--bw-color-white);
   --bw-checkbox-checked-background-color: var(--bw-color-primary);
+
   --bw-radio-background-color: var(--bw-color-white);
   --bw-radio-checked-background-color: var(--bw-color-primary);
+
+  --bw-tooltip-content-border-color: var(--bw-color-zinc-300);
+  --bw-tooltip-content-color: var(--bw-color-zinc-900);
+  --bw-tooltip-content-background-color: var(--bw-color-white);
 }
 
 :root[data-theme="fuchsia"] {
@@ -194,6 +199,11 @@
 
   --bw-checkbox-background-color: var(--bw-color-white);
   --bw-checkbox-checked-background-color: var(--bw-color-primary);
+
   --bw-radio-background-color: var(--bw-color-white);
   --bw-radio-checked-background-color: var(--bw-color-primary);
+
+  --bw-tooltip-content-border-color: var(--bw-color-zinc-300);
+  --bw-tooltip-content-color: var(--bw-color-zinc-900);
+  --bw-tooltip-content-background-color: var(--bw-color-white);
 }

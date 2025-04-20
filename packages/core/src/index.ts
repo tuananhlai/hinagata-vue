@@ -4,8 +4,9 @@ import "./styles/tokens.css";
 
 export * from "./components/button";
 export * from "./components/checkbox";
-export * from "./components/field";
-export * from "./components/text-field";
-
 export * from "./components/checkbox-group";
+export * from "./components/field";
+export * from "./components/provider";
 export * from "./components/radio";
+export * from "./components/text-field";
+export * from "./components/tooltip";
