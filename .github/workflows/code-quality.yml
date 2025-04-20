@@ -20,3 +20,5 @@ jobs:
         uses: ./.github/actions/install-dependencies
       - name: Run tests
         run: pnpm --filter @tuananhlai/sample-design-system run ci:test
+      - name: "Report Coverage"
+        uses: davelosert/vitest-coverage-report-action@v2
