@@ -22,3 +22,5 @@ jobs:
         run: pnpm --filter @tuananhlai/sample-design-system run ci:test
       - name: "Report Coverage"
         uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          working-directory: packages/core
