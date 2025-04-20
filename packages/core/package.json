@@ -24,7 +24,7 @@
     "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci:test": "vitest",
+    "ci:test": "vitest --coverage.enabled true",
     "chromatic": "npx chromatic"
   },
   "devDependencies": {

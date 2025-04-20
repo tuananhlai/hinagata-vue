@@ -7,6 +7,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./vitest.setup.js",
     coverage: {
+      reporter: ["text", "json-summary", "json"],
       include: ["src/**/*.{ts,tsx,vue}"],
     },
   },
