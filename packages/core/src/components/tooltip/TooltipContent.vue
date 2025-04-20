@@ -39,17 +39,16 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
 
 <style lang="scss" module>
 .root {
-  border-radius: 4px;
-  padding: 10px 15px;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--grass-11);
-  background-color: white;
-  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
-    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-  user-select: none;
-  animation-duration: 400ms;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
+  border: 1px solid
+    var(--bw-tooltip-content-border-color, var(--bw-color-zinc-300));
+  border-radius: var(--bw-radius-md);
+  color: var(--bw-tooltip-content-color, var(--bw-color-zinc-900));
+  background-color: var(
+    --bw-tooltip-content-background-color,
+    var(--bw-color-white)
+  );
+  padding: var(--bw-space-2-5) var(--bw-space-3);
+  font-size: var(--bw-font-sm);
+  box-shadow: var(--bw-shadow-md);
 }
 </style>
