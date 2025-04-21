@@ -43,6 +43,7 @@ import {
   useForwardPropsEmits,
 } from "reka-ui";
 import { useFieldContext } from "../field/FieldContext";
+import { computed } from "vue";
 
 const props = withDefaults(defineProps<CheckboxGroupProps>(), {
   orientation: "vertical",
@@ -53,6 +54,22 @@ defineSlots<CheckboxGroupSlots>();
 const forwarded = useForwardPropsEmits(props, emits);
 
 const fieldContextValue = useFieldContext();
+
+const ariaLabelledby = computed<string | undefined>(
+  () =>
+    clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
+    undefined
+);
+
+/**
+ * If a set of checkboxes is presented as a logical group with a visible label,
+ * the checkboxes are included in an element with role group that has the property
+ * aria-labelledby set to the ID of the element containing the label.
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/#wai-ariaroles,states,andproperties
+ */
+const role = computed<"group" | undefined>(() =>
+  ariaLabelledby.value != null ? "group" : undefined
+);
 
 // TODO: Apply invalid state to all child checkboxes when invalid prop is set?
 </script>
@@ -65,16 +82,14 @@ const fieldContextValue = useFieldContext();
     :data-invalid="invalid || undefined"
     :aria-invalid="invalid"
     :aria-label="props.ariaLabel"
-    :aria-labelledby="
-      clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
-      undefined
-    "
+    :aria-labelledby="ariaLabelledby"
     :aria-describedby="
       clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
       undefined
     "
     :aria-details="props.ariaDetails"
     :aria-errormessage="props.ariaErrormessage"
+    :role="role"
   >
     <slot />
   </CheckboxGroupRoot>
