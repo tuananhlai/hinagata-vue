@@ -57,7 +57,7 @@ const fieldContextValue = useFieldContext();
 
 const ariaLabelledby = computed<string | undefined>(
   () =>
-    clsx(props.ariaDescribedby, fieldContextValue?.describedBy.value) ||
+    clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
     undefined
 );
 
