@@ -14,7 +14,7 @@ import { onMounted, onUnmounted } from "vue";
 import { useFieldContext } from "./FieldContext";
 
 const props = defineProps<ErrorMessageProps>();
-const slots = defineSlots<ErrorMessageSlots>();
+defineSlots<ErrorMessageSlots>();
 
 const errorMessageID = useId(props.id);
 const fieldContextValue = useFieldContext();

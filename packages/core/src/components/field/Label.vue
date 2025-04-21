@@ -18,7 +18,7 @@ import { computed, ComputedRef, onMounted, onUnmounted } from "vue";
 import { useFieldContext } from "./FieldContext";
 
 const props = defineProps<LabelProps>();
-const slots = defineSlots<LabelSlots>();
+defineSlots<LabelSlots>();
 
 const labelID = useId(props.id);
 const fieldContextValue = useFieldContext();

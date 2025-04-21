@@ -18,7 +18,7 @@ export default {};
 <script setup lang="ts">
 import { useField } from "./FieldContext";
 
-const slots = defineSlots<FieldSlots>();
+defineSlots<FieldSlots>();
 
 useField();
 </script>

@@ -14,7 +14,7 @@ import { onMounted, onUnmounted } from "vue";
 import { useFieldContext } from "./FieldContext";
 
 const props = defineProps<DescriptionProps>();
-const slots = defineSlots<DescriptionSlots>();
+defineSlots<DescriptionSlots>();
 
 const descriptionID = useId(props.id);
 const fieldContextValue = useFieldContext();

@@ -1,6 +1,4 @@
 <script lang="ts">
-export interface ProviderProps {}
-
 export interface ProviderSlots {
   default(): void;
 }
@@ -9,7 +7,6 @@ export interface ProviderSlots {
 <script setup lang="ts">
 import { TooltipProvider } from "reka-ui";
 
-defineProps<ProviderProps>();
 defineSlots<ProviderSlots>();
 </script>
 

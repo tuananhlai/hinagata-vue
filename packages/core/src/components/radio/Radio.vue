@@ -21,7 +21,7 @@ import {
 
 const props = defineProps<RadioProps>();
 const emits = defineEmits<RadioEmits>();
-const slots = defineSlots<RadioSlots>();
+defineSlots<RadioSlots>();
 </script>
 
 <template>
