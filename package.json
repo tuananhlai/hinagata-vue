@@ -7,8 +7,8 @@
     "generate": "plop",
     "storybook:core": "pnpm --filter @tuananhlai/sample-design-system run storybook",
     "lint": "eslint --ext .ts,.vue .",
-    "format": "prettier --write 'src/**/*.{ts,vue}'",
-    "format:check": "prettier --check 'src/**/*.{ts,vue}'"
+    "format": "prettier --write '**/src/**/*.{ts,vue}'",
+    "format:check": "prettier --check '**/src/**/*.{ts,vue}'"
   },
   "keywords": [],
   "author": "Andy",

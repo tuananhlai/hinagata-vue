@@ -12,7 +12,7 @@ export interface FieldSlots {
  *   <ErrorMessage>Error Message</ErrorMessage>
  * </Field>
  */
-export default {}
+export default {};
 </script>
 
 <script setup lang="ts">

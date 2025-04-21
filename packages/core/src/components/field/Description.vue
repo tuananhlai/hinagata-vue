@@ -19,7 +19,7 @@ const slots = defineSlots<DescriptionSlots>();
 const descriptionID = useId(props.id);
 const fieldContextValue = useFieldContext();
 onMounted(() =>
-  onUnmounted(fieldContextValue?.registerDescription(descriptionID))
+  onUnmounted(fieldContextValue?.registerDescription(descriptionID)),
 );
 </script>
 

@@ -3,12 +3,11 @@ export type {
   TextFieldEmits,
   TextFieldExpose,
   TextFieldProps,
-  TextFieldSlots
+  TextFieldSlots,
 } from "./TextField.vue";
 export { default as TextInput } from "./TextInput.vue";
 export type {
   TextInputEmits,
   TextInputExpose,
-  TextInputProps
+  TextInputProps,
 } from "./TextInput.vue";
-

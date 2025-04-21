@@ -4,6 +4,5 @@ export { default as ButtonBase } from "./ButtonBase.vue";
 export type {
   ButtonBaseEmits,
   ButtonBaseProps,
-  ButtonBaseSlots
+  ButtonBaseSlots,
 } from "./ButtonBase.vue";
-
