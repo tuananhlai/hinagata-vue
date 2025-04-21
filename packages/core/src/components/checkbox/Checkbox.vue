@@ -20,7 +20,7 @@ import {
 
 const props = defineProps<CheckboxProps>();
 const emits = defineEmits<CheckboxEmits>();
-const slots = defineSlots<CheckboxSlots>();
+defineSlots<CheckboxSlots>();
 
 const forwardedPropEmits = useForwardPropsEmits(props, emits);
 </script>

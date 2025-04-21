@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   variant: "primary",
 });
 const emit = defineEmits<ButtonEmits>();
-const slots = defineSlots<ButtonSlots>();
+defineSlots<ButtonSlots>();
 
 const forwarded = useForwardPropsEmits(props, emit);
 </script>

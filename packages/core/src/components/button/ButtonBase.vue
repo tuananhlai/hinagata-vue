@@ -70,7 +70,7 @@ import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 
 const props = defineProps<ButtonBaseProps>();
 const emit = defineEmits<ButtonBaseEmits>();
-const slots = defineSlots<ButtonBaseSlots>();
+defineSlots<ButtonBaseSlots>();
 
 const doWhileNotLoading = (fn: () => void) => {
   if (props.loading) {

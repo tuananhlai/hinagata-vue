@@ -30,7 +30,7 @@ import { useFieldContext } from "../field/FieldContext";
 
 const props = defineProps<RadioGroupProps>();
 const emits = defineEmits<RadioGroupEmits>();
-const slots = defineSlots<RadioGroupSlots>();
+defineSlots<RadioGroupSlots>();
 
 const forwardedPropEmits = useForwardPropsEmits(props, emits);
 

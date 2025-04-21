@@ -24,3 +24,15 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           working-directory: packages/core
+  verify-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+      - name: Lint code
+        run: pnpm run lint
+      - name: Verify code formatting
+        run: pnpm run format:check
+      - name: Check for dependency duplication
+        run: pnpm dedupe --check

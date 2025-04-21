@@ -48,7 +48,7 @@ const props = withDefaults(defineProps<CheckboxGroupProps>(), {
   orientation: "vertical",
 });
 const emits = defineEmits<CheckboxGroupEmits>();
-const slots = defineSlots<CheckboxGroupSlots>();
+defineSlots<CheckboxGroupSlots>();
 
 const forwarded = useForwardPropsEmits(props, emits);
 

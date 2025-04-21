@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<TooltipContentProps>(), {
   sideOffset: 4,
 });
 const emits = defineEmits<TooltipContentEmits>();
-const slots = defineSlots<TooltipContentSlots>();
+defineSlots<TooltipContentSlots>();
 
 const forwardedPropEmits = useForwardPropsEmits(props, emits);
 </script>

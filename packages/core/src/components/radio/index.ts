@@ -5,13 +5,12 @@ export { default as RadioGroup } from "./RadioGroup.vue";
 export type {
   RadioGroupEmits,
   RadioGroupProps,
-  RadioGroupSlots
+  RadioGroupSlots,
 } from "./RadioGroup.vue";
 
 export { default as RadioGroupField } from "./RadioGroupField.vue";
 export type {
   RadioGroupFieldEmits,
   RadioGroupFieldProps,
-  RadioGroupFieldSlots
+  RadioGroupFieldSlots,
 } from "./RadioGroupField.vue";
-

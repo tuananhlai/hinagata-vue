@@ -96,11 +96,11 @@ import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 import clsx from "clsx";
 import { useId } from "reka-ui";
 import {
-    HTMLAttributes,
-    InputHTMLAttributes,
-    onMounted,
-    onUnmounted,
-    useTemplateRef,
+  HTMLAttributes,
+  InputHTMLAttributes,
+  onMounted,
+  onUnmounted,
+  useTemplateRef,
 } from "vue";
 import { useFieldContext } from "../field/FieldContext";
 
