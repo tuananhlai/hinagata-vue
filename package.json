@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "release": "pnpm --filter @tuananhlai/sample-design-system run build && changeset publish",
+    "core": "pnpm --filter @tuananhlai/sample-design-system",
+    "dogfood": "pnpm --filter dogfood",
+    "release": "pnpm core run build && changeset publish",
     "generate": "plop",
-    "storybook:core": "pnpm --filter @tuananhlai/sample-design-system run storybook",
     "lint": "eslint --ext .ts,.vue .",
     "format": "prettier --write '**/src/**/*.{ts,vue}'",
     "format:check": "prettier --check '**/src/**/*.{ts,vue}'"
