@@ -77,11 +77,10 @@ it("should be modal when `modal` is true", async () => {
       components: { Button, PopoverTrigger, PopoverContent, Popover },
     })
   );
+  await nextTick();
 
-  // Check that the outside button is hidden.
-  expect(
-    screen.getByRole("button", { name: "Second button", hidden: true })
-  ).toBeInTheDocument();
+  // Check that the outside button is hidden from the accessibility tree.
+  expect(screen.queryByRole("button", { name: "Second button" })).toBeNull();
 });
 
 it("should trap focus within the popover", async () => {
