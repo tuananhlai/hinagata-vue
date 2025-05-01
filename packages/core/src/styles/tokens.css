@@ -160,7 +160,7 @@
   --bw-space-96: 24rem;
 }
 
-:root {
+[data-theme="pink"] {
   --bw-color-primary: var(--bw-color-pink-500);
 
   --bw-button-primary-background-color: var(--bw-color-primary);
@@ -184,7 +184,7 @@
   --bw-tooltip-content-background-color: var(--bw-color-white);
 }
 
-:root[data-theme="fuchsia"] {
+[data-theme="fuschia"] {
   --bw-color-primary: var(--bw-color-fuchsia-500);
 
   --bw-button-primary-background-color: var(--bw-color-primary);
