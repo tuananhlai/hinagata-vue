@@ -57,7 +57,8 @@ const fieldContextValue = useFieldContext();
 
 const ariaLabelledby = computed<string | undefined>(
   () =>
-    clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) || undefined
+    clsx(props.ariaLabelledby, fieldContextValue?.labelledBy.value) ||
+    undefined,
 );
 
 /**
@@ -67,7 +68,7 @@ const ariaLabelledby = computed<string | undefined>(
  * @see https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/#wai-ariaroles,states,andproperties
  */
 const role = computed<"group" | undefined>(() =>
-  ariaLabelledby.value != null ? "group" : undefined
+  ariaLabelledby.value != null ? "group" : undefined,
 );
 
 // TODO: Apply invalid state to all child checkboxes when invalid prop is set?
