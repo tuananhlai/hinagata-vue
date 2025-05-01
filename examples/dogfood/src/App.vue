@@ -3,6 +3,9 @@ import {
   Button,
   Checkbox,
   CheckboxGroupField,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   Radio,
   RadioGroup,
   TextField,
@@ -44,6 +47,14 @@ const focus = () => {
       <Radio value="two">Option 2</Radio>
       <Radio value="three">Option 3</Radio>
     </RadioGroup>
+    <Popover>
+      <PopoverTrigger as-child>
+        <Button>Open Popover</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <p>Popover content</p>
+      </PopoverContent>
+    </Popover>
   </div>
 </template>
 

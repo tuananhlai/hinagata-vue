@@ -32,8 +32,6 @@ it("should have the correct role", async () => {
   expect(screen.getByRole("tooltip", { hidden: true })).toBeInTheDocument();
 });
 
-
-
 it("should provide description to the trigger when the tooltip is open", async () => {
   render(
     h({
@@ -59,5 +57,7 @@ it("should provide description to the trigger when the tooltip is open", async (
   );
   await nextTick();
 
-  expect(screen.getByRole('button')).toHaveAccessibleDescription('Tooltip Content');
+  expect(screen.getByRole("button")).toHaveAccessibleDescription(
+    "Tooltip Content"
+  );
 });
