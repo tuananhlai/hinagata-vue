@@ -20,7 +20,7 @@ const errorMessageID = useId(props.id);
 const fieldContextValue = useFieldContext();
 
 onMounted(() =>
-  onUnmounted(fieldContextValue?.registerDescription(errorMessageID)),
+  onUnmounted(fieldContextValue?.registerDescription(errorMessageID))
 );
 </script>
 
