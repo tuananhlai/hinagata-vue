@@ -22,3 +22,17 @@ export const Default: Story = {
     </Popover>`,
   }),
 };
+
+export const Modal: Story = {
+  render: () => ({
+    components: { Popover, Button, PopoverTrigger, PopoverContent },
+    template: `<Popover modal>
+      <PopoverTrigger as-child>
+        <Button>Open Popover</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <p>Popover content</p>
+      </PopoverContent>
+    </Popover>`,
+  }),
+};
