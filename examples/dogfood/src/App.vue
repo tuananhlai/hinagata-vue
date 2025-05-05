@@ -3,9 +3,14 @@ import {
   Button,
   Checkbox,
   CheckboxGroupField,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
   Popover,
   PopoverContent,
   PopoverTrigger,
+  Provider,
   Radio,
   RadioGroup,
   TextField,
@@ -24,38 +29,52 @@ const focus = () => {
 </script>
 
 <template>
-  <div :class="$style.root">
-    <Button>Click me</Button>
-    <Button variant="secondary">Click me</Button>
-    <Button variant="tertiary">Click me</Button>
-    <Checkbox v-model="isChecked">Check me</Checkbox>
-    <TextField ref="text-field-ref" label="Enter your name" />
-    <Button @click="focus">Focus</Button>
-    <CheckboxGroupField label="Checkboxes">
-      <Checkbox value="one">Option 1</Checkbox>
-      <Checkbox value="two">Option 2</Checkbox>
-      <Checkbox value="three">Option 3</Checkbox>
-      <template #description>
-        <p :class="$style.description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          quos.
-        </p>
-      </template>
-    </CheckboxGroupField>
-    <RadioGroup>
-      <Radio value="one">Option 1</Radio>
-      <Radio value="two">Option 2</Radio>
-      <Radio value="three">Option 3</Radio>
-    </RadioGroup>
-    <Popover>
-      <PopoverTrigger as-child>
-        <Button>Open Popover</Button>
-      </PopoverTrigger>
-      <PopoverContent>
-        <p>Popover content</p>
-      </PopoverContent>
-    </Popover>
-  </div>
+  <Provider>
+    <div :class="$style.root">
+      <Button>Click me</Button>
+      <Button variant="secondary">Click me</Button>
+      <Button variant="tertiary">Click me</Button>
+      <Checkbox v-model="isChecked">Check me</Checkbox>
+      <TextField ref="text-field-ref" label="Enter your name" />
+      <Button @click="focus">Focus</Button>
+      <CheckboxGroupField label="Checkboxes">
+        <Checkbox value="one">Option 1</Checkbox>
+        <Checkbox value="two">Option 2</Checkbox>
+        <Checkbox value="three">Option 3</Checkbox>
+        <template #description>
+          <p :class="$style.description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </p>
+        </template>
+      </CheckboxGroupField>
+      <RadioGroup>
+        <Radio value="one">Option 1</Radio>
+        <Radio value="two">Option 2</Radio>
+        <Radio value="three">Option 3</Radio>
+      </RadioGroup>
+      <Popover>
+        <PopoverTrigger as-child>
+          <Button>Open Popover</Button>
+        </PopoverTrigger>
+        <PopoverContent>
+          <p>Popover content</p>
+        </PopoverContent>
+      </Popover>
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <Button>Open DropdownMenu</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start" side="top">
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem disabled>Item 2</DropdownMenuItem>
+          <DropdownMenuItem text-value="Item Number Three"
+            >Item 3</DropdownMenuItem
+          >
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Provider>
 </template>
 
 <style lang="css" module>
