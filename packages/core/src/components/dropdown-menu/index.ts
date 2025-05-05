@@ -7,5 +7,12 @@ export type {
 export { default as DropdownMenuTrigger } from "./DropdownMenuTrigger.vue";
 export type { DropdownMenuTriggerSlots } from "./DropdownMenuTrigger.vue";
 
+export { default as DropdownMenuItem } from "./DropdownMenuItem.vue";
+export type {
+  DropdownMenuItemProps,
+  DropdownMenuItemEmits,
+  DropdownMenuItemSlots,
+} from "./DropdownMenuItem.vue";
+
 export { DropdownMenuRoot as DropdownMenu } from "reka-ui";
 export type { DropdownMenuRootProps, DropdownMenuRootEmits } from "reka-ui";

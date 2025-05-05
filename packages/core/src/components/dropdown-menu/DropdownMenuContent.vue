@@ -22,7 +22,10 @@ defineSlots<DropdownMenuContentSlots>();
 
 <template>
   <DropdownMenuPortal>
-    <RekaDropdownMenuContent v-bind="{ ...props, ...$attrs }">
+    <RekaDropdownMenuContent
+      :class="$style.content"
+      v-bind="{ ...props, ...$attrs }"
+    >
       <slot />
     </RekaDropdownMenuContent>
   </DropdownMenuPortal>
