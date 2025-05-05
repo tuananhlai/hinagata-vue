@@ -15,4 +15,7 @@ export type {
 } from "./DropdownMenuItem.vue";
 
 export { DropdownMenuRoot as DropdownMenu } from "reka-ui";
-export type { DropdownMenuRootProps, DropdownMenuRootEmits } from "reka-ui";
+export type {
+  DropdownMenuRootProps as DropdownMenuProps,
+  DropdownMenuRootEmits as DropdownMenuEmits,
+} from "reka-ui";
