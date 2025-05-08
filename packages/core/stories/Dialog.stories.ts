@@ -1,5 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { Dialog, DialogTrigger, DialogContent, Button } from "../src";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  Button,
+  DialogActions,
+  DialogBody,
+  DialogTitle,
+  TextField,
+} from "../src";
 
 const meta = {
   title: "Dialog",
@@ -17,11 +26,27 @@ export const Default: Story = {
           <Button>Open</Button>
         </DialogTrigger>
         <DialogContent>
-          
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogBody>
+            <TextField label="Name" />
+          </DialogBody>
+          <DialogActions>
+            <Button variant="secondary">Close</Button>
+            <Button>Submit</Button>
+          </DialogActions>
         </DialogContent>
       </Dialog>
     `,
-    components: { Dialog, DialogTrigger, DialogContent, Button },
+    components: {
+      Dialog,
+      DialogTrigger,
+      DialogContent,
+      Button,
+      TextField,
+      DialogTitle,
+      DialogBody,
+      DialogActions,
+    },
   }),
 };
 

@@ -12,3 +12,9 @@ export type { DialogProps, DialogEmits, DialogSlots } from "./Dialog.vue";
 
 export { default as DialogTitle } from "./DialogTitle.vue";
 export type { DialogTitleSlots } from "./DialogTitle.vue";
+
+export { default as DialogBody } from "./DialogBody.vue";
+export type { DialogBodySlots } from "./DialogBody.vue";
+
+export { default as DialogActions } from "./DialogActions.vue";
+export type { DialogActionsSlots } from "./DialogActions.vue";
