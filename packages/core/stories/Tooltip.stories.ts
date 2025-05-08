@@ -14,7 +14,7 @@ export const Default: Story = {
     components: { Tooltip, TooltipTrigger, TooltipContent, Button },
     template: `
     <Tooltip>
-      <TooltipTrigger as-child>
+      <TooltipTrigger>
         <Button>Hover me</Button>
       </TooltipTrigger>
       <TooltipContent>
