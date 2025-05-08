@@ -5,9 +5,11 @@ export type {
   PopoverContentSlots,
 } from "./PopoverContent.vue";
 
-export { PopoverRoot as Popover, PopoverTrigger } from "reka-ui";
+export { default as PopoverTrigger } from "./PopoverTrigger.vue";
+export type { PopoverTriggerSlots } from "./PopoverTrigger.vue";
+
+export { PopoverRoot as Popover } from "reka-ui";
 export type {
   PopoverRootEmits as PopoverEmits,
   PopoverRootProps as PopoverProps,
-  PopoverTriggerProps,
 } from "reka-ui";

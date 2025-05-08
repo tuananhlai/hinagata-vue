@@ -4,6 +4,10 @@ export interface FieldSlots {
 }
 
 /**
+ * A helper component that groups a label, input, description and error message. It
+ * automatically associate the label, description and error message with the input using
+ * the appropriate attributes.
+ *
  * @example
  * <Field>
  *   <Label>Label</Label>
