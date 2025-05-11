@@ -12,3 +12,4 @@ export * from "./components/text-field";
 export * from "./components/tooltip";
 export * from "./components/popover";
 export * from "./components/dropdown-menu";
+export * from "./components/dialog";

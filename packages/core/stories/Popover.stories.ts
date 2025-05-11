@@ -13,7 +13,7 @@ export const Default: Story = {
   render: () => ({
     components: { Popover, Button, PopoverTrigger, PopoverContent },
     template: `<Popover>
-      <PopoverTrigger as-child>
+      <PopoverTrigger>
         <Button>Open Popover</Button>
       </PopoverTrigger>
       <PopoverContent>
@@ -27,7 +27,7 @@ export const Modal: Story = {
   render: () => ({
     components: { Popover, Button, PopoverTrigger, PopoverContent },
     template: `<Popover modal>
-      <PopoverTrigger as-child>
+      <PopoverTrigger>
         <Button>Open Popover</Button>
       </PopoverTrigger>
       <PopoverContent>

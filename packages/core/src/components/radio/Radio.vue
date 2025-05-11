@@ -77,7 +77,7 @@ defineSlots<RadioSlots>();
   align-items: center;
   justify-content: center;
   appearance: none;
-  background-color: var(--bw-radio-background-color);
+  background-color: transparent;
   padding: 0;
   border: none;
 
