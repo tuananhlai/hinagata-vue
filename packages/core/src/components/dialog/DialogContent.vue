@@ -72,11 +72,13 @@ const close = () => dialogRootContext.onOpenChange(false);
 
 .content {
   width: 100%;
+  // Set position to relative to allow the close button to be positioned absolutely.
   position: relative;
 
   background-color: var(--bw-color-white);
   border-radius: var(--bw-radius-2xl);
   padding: var(--bw-space-8);
+  box-shadow: var(--bw-shadow-md);
 
   &:where(:not(:focus-visible)) {
     outline: none;

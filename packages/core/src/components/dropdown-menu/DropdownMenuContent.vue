@@ -16,6 +16,8 @@ import {
 
 const props = withDefaults(defineProps<DropdownMenuContentProps>(), {
   sideOffset: 4,
+  collisionPadding: 8,
+  avoidCollisions: true,
 });
 defineSlots<DropdownMenuContentSlots>();
 </script>
@@ -35,13 +37,17 @@ defineSlots<DropdownMenuContentSlots>();
 .content {
   border: 1px solid
     var(--bw-dropdown-menu-content-border-color, var(--bw-color-zinc-300));
-  border-radius: var(--bw-radius-md);
+  border-radius: var(--bw-radius-lg);
   color: var(--bw-dropdown-menu-content-color, var(--bw-color-zinc-900));
   background-color: var(
     --bw-dropdown-menu-content-background-color,
     var(--bw-color-white)
   );
-  padding: var(--bw-space-2-5) var(--bw-space-3);
+  padding: 0;
   box-shadow: var(--bw-shadow-md);
+  overflow: hidden;
+  min-width: var(--bw-space-56);
+  max-height: var(--reka-dropdown-menu-content-available-height);
+  overflow-y: auto;
 }
 </style>
