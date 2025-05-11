@@ -25,11 +25,11 @@ export const Default: Story = {
         { id: 3, label: "Item 3" },
       ];
 
-      const selectedItem = ref<number | null>(null);
+      const pickedItem = ref<number | null>(null);
 
       return {
         items,
-        selectedItem,
+        pickedItem,
       };
     },
     components: {
@@ -49,13 +49,13 @@ export const Default: Story = {
           v-for="item in items"
           :key="item.id"
           :disabled="item.disabled"
-          @select="() => (selectedItem = item.id)"
+          @select="() => (pickedItem = item.id)"
         >
           {{ item.label }}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-    <p>Selected item: {{ selectedItem }}</p>
+    <p>Picked item: {{ pickedItem }}</p>
     `,
   }),
 };

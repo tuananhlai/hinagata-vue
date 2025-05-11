@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
-import { render, screen } from "@testing-library/vue";
-import { expect, it } from "vitest";
+import { render, RenderOptions, screen } from "@testing-library/vue";
+import { expect, it, vi } from "vitest";
 import { h, nextTick } from "vue";
 import {
   DropdownMenu,
@@ -37,12 +37,50 @@ it("should have the correct role", async () => {
   expect(menuItems).toHaveLength(3);
 });
 
-const renderExampleDropdownMenu = async (props?: DropdownMenuProps) => {
-  const result = render(DropdownMenu, {
-    props,
-    slots: {
+it("should activate the correct item when clicked", async () => {
+  const onSelect = vi.fn();
+
+  await renderExampleDropdownMenu(
+    {
+      defaultOpen: true,
+    },
+    {
       default: h({
+        setup() {
+          return {
+            onSelect,
+          };
+        },
         template: `
+        <DropdownMenuTrigger>
+          <button>Open DropdownMenu</button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem @select="() => onSelect(1)">Item 1</DropdownMenuItem>
+          <DropdownMenuItem @select="() => onSelect(2)">Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      `,
+        components: {
+          DropdownMenuTrigger,
+          DropdownMenuContent,
+          DropdownMenuItem,
+        },
+      }),
+    }
+  );
+  const item1 = screen.getByRole("menuitem", { name: "Item 1" });
+  await userEvent.click(item1);
+
+  expect(onSelect).toHaveBeenCalledWith(1);
+});
+
+const renderExampleDropdownMenu = async (
+  props?: DropdownMenuProps,
+  slots?: RenderOptions<typeof DropdownMenu>["slots"]
+) => {
+  const defaultSlots: RenderOptions<typeof DropdownMenu>["slots"] = {
+    default: h({
+      template: `
         <DropdownMenuTrigger>
           <button>Open DropdownMenu</button>
         </DropdownMenuTrigger>
@@ -52,13 +90,19 @@ const renderExampleDropdownMenu = async (props?: DropdownMenuProps) => {
           <DropdownMenuItem>Item 3</DropdownMenuItem>
         </DropdownMenuContent>
         `,
-        components: {
-          DropdownMenuTrigger,
-          DropdownMenuContent,
-          DropdownMenuItem,
-        },
-      }),
-    },
+      components: {
+        DropdownMenuTrigger,
+        DropdownMenuContent,
+        DropdownMenuItem,
+      },
+    }),
+  };
+
+  slots = slots ?? defaultSlots;
+
+  const result = render(DropdownMenu, {
+    props,
+    slots,
   });
   await nextTick();
 
