@@ -19,5 +19,9 @@ defineSlots<DialogActionsSlots>();
   display: flex;
   justify-content: flex-end;
   gap: var(--bw-space-2);
+
+  &:where(:not(:first-child)) {
+    margin-top: var(--bw-space-6);
+  }
 }
 </style>

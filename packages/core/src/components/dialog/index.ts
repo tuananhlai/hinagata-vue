@@ -18,3 +18,5 @@ export type { DialogBodySlots } from "./DialogBody.vue";
 
 export { default as DialogActions } from "./DialogActions.vue";
 export type { DialogActionsSlots } from "./DialogActions.vue";
+
+export { default as DialogClose } from "./DialogClose.vue";

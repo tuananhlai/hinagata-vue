@@ -8,6 +8,7 @@ import {
   DialogBody,
   DialogTitle,
   TextField,
+  DialogClose,
 } from "../src";
 
 const meta = {
@@ -21,18 +22,19 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => ({
     template: `
-      <Dialog>
+      <Dialog default-open>
         <DialogTrigger>
           <Button>Open</Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent v-slot="{ close }">
+          <DialogClose />
           <DialogTitle>Dialog Title</DialogTitle>
           <DialogBody>
             <TextField label="Name" />
           </DialogBody>
           <DialogActions>
-            <Button variant="secondary">Close</Button>
-            <Button>Submit</Button>
+            <Button variant="secondary" @click="close">Close</Button>
+            <Button @click="close">Submit</Button>
           </DialogActions>
         </DialogContent>
       </Dialog>
@@ -46,6 +48,7 @@ export const Default: Story = {
       DialogTitle,
       DialogBody,
       DialogActions,
+      DialogClose,
     },
   }),
 };

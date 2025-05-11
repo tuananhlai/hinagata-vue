@@ -41,11 +41,46 @@ const close = () => dialogRootContext.onOpenChange(false);
 
 <template>
   <DialogPortal>
-    <DialogOverlay :class="classes?.overlay" data-testid="overlay" />
-    <RekaDialogContent :class="classes?.content">
-      <slot :close="close" />
-    </RekaDialogContent>
+    <DialogOverlay
+      :class="[$style.overlay, classes?.overlay]"
+      data-testid="overlay"
+    >
+      <RekaDialogContent :class="[$style.content, classes?.content]">
+        <slot :close="close" />
+      </RekaDialogContent>
+    </DialogOverlay>
   </DialogPortal>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" module>
+@use "../../styles/utils" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--bw-space-2);
+  background-color: alpha(var(--bw-color-zinc-950), 25);
+  backdrop-filter: var(--bw-blur-md);
+}
+
+.content {
+  width: 100%;
+  position: relative;
+
+  background-color: var(--bw-color-white);
+  border-radius: var(--bw-radius-2xl);
+  padding: var(--bw-space-8);
+
+  &:where(:not(:focus-visible)) {
+    outline: none;
+  }
+
+  @include screen-sm {
+    max-width: 32rem;
+  }
+}
+</style>

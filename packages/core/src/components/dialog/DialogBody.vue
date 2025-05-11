@@ -17,5 +17,9 @@ defineSlots<DialogBodySlots>();
 <style lang="scss" module>
 .root {
   overflow-y: auto;
+
+  &:where(:not(:first-child)) {
+    margin-top: var(--bw-space-6);
+  }
 }
 </style>
