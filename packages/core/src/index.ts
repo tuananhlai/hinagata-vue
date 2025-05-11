@@ -11,3 +11,4 @@ export * from "./components/radio";
 export * from "./components/text-field";
 export * from "./components/tooltip";
 export * from "./components/popover";
+export * from "./components/dialog";
