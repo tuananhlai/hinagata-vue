@@ -47,6 +47,7 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
 
   &:where([data-disabled]) {
     color: var(--bw-color-zinc-400);
+    pointer-events: none;
   }
 }
 </style>
