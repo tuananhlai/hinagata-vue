@@ -1,7 +1,10 @@
 <script lang="ts">
 export interface DialogContentProps {
+  /** The class names to be passed to underlying components. */
   classes?: {
+    /** The layer which covers the entire screen when the dialog is open. */
     overlay?: string;
+    /** The open dialog. */
     content?: string;
   };
 }

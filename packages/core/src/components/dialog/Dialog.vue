@@ -7,6 +7,27 @@ export interface DialogEmits extends DialogRootEmits {}
 export interface DialogSlots {
   default(): void;
 }
+
+/**
+ * An overlay shown above other content in an application.
+ *
+ * @example
+ * <Dialog>
+ *   <DialogTrigger>
+ *     <Button>Open</Button>
+ *   </DialogTrigger>
+ *   <DialogContent>
+ *     <DialogTitle>Dialog Title</DialogTitle>
+ *     <DialogBody>
+ *       <p>Dialog content</p>
+ *     </DialogBody>
+ *     <DialogActions>
+ *       <Button>Action</Button>
+ *     </DialogActions>
+ *   </DialogContent>
+ * </Dialog>
+ */
+export default {};
 </script>
 
 <script lang="ts" setup>
