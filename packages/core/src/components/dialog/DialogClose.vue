@@ -35,5 +35,9 @@ const buttonSize = 20;
   padding: 0;
   display: grid;
   place-content: center;
+
+  &:where(:not(:focus-visible)) {
+    outline: none;
+  }
 }
 </style>
