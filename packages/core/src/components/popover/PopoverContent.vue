@@ -25,6 +25,7 @@ import {
 
 const props = withDefaults(defineProps<PopoverContentProps>(), {
   sideOffset: 4,
+  collisionPadding: 8,
 });
 const emits = defineEmits<PopoverContentEmits>();
 defineSlots<PopoverContentSlots>();
@@ -45,6 +46,8 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
 
 <style lang="scss" module>
 .root {
+  min-width: var(--bw-space-56);
+
   border: 1px solid
     var(--bw-popover-content-border-color, var(--bw-color-zinc-300));
   border-radius: var(--bw-radius-md);

@@ -32,15 +32,15 @@
   --bw-line-9: 2.25rem;
   --bw-line-10: 2.5rem;
 
-  --bw-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --bw-shadow-sm:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --bw-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --bw-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.1);
-  --bw-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --bw-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --bw-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --bw-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --bw-shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --bw-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --bw-shadow-none: none;
 
@@ -182,6 +182,10 @@
   --bw-tooltip-content-border-color: var(--bw-color-zinc-300);
   --bw-tooltip-content-color: var(--bw-color-zinc-900);
   --bw-tooltip-content-background-color: var(--bw-color-white);
+
+  --bw-dropdown-menu-content-border-color: var(--bw-color-zinc-300);
+  --bw-dropdown-menu-content-color: var(--bw-color-zinc-900);
+  --bw-dropdown-menu-content-background-color: var(--bw-color-white);
 }
 
 [data-theme="fuschia"] {
@@ -206,4 +210,8 @@
   --bw-tooltip-content-border-color: var(--bw-color-zinc-300);
   --bw-tooltip-content-color: var(--bw-color-zinc-900);
   --bw-tooltip-content-background-color: var(--bw-color-white);
+
+  --bw-dropdown-menu-content-border-color: var(--bw-color-zinc-300);
+  --bw-dropdown-menu-content-color: var(--bw-color-zinc-900);
+  --bw-dropdown-menu-content-background-color: var(--bw-color-white);
 }
