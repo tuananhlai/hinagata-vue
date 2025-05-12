@@ -24,6 +24,8 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           working-directory: packages/core
+      # Generate coverage badge and push it to the `badges` branch. These two
+      # steps are only run on the `main` branch.
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
         if: github.ref == 'refs/heads/main' && (success() || failure())
@@ -35,7 +37,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         if: github.ref == 'refs/heads/main'
         with:
-          commit-message: "Update coverage badges"
+          commit_message: "Update coverage badge"
           create_branch: true
           branch: badges
           file_pattern: "./badge.svg"
