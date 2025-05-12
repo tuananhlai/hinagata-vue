@@ -26,11 +26,16 @@ jobs:
           working-directory: packages/core
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
-        if: success() || failure() # run whether steps succeed or not
+        if: success() || failure()
         with:
           summary-path: packages/core/coverage/coverage-summary.json
           result-type: statements
           upload-badge: false
+      - name: Commit coverage badge
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: "./badge.svg"
+
   verify-quality:
     runs-on: ubuntu-latest
     steps:
