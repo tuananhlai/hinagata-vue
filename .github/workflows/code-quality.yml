@@ -42,8 +42,9 @@ jobs:
           file_pattern: "./badge.svg"
           create_branch: true
           branch: badges
-          status_options: "--untracked-files=normal"
-          add_options: "--all"
+          # status_options: "--untracked-files=normal"
+          # add_options: "--all"
+          push_options: "--force"
 
   verify-quality:
     runs-on: ubuntu-latest
