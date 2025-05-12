@@ -42,7 +42,8 @@ jobs:
           file_pattern: "./badge.svg"
           create_branch: true
           branch: badges
-          skip_dirty_check: true
+          status_options: "--untracked-files=normal"
+          add_options: "--all"
 
   verify-quality:
     runs-on: ubuntu-latest
