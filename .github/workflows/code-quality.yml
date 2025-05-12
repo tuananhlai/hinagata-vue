@@ -28,7 +28,7 @@ jobs:
       # steps are only run on the `main` branch.
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
-        # if: github.ref == 'refs/heads/main' && (success() || failure())
+        if: github.ref == 'refs/heads/main' && (success() || failure())
         with:
           result-type: statements
           upload-badge: false
@@ -36,14 +36,12 @@ jobs:
           summary-path: packages/core/coverage/coverage-summary.json
       - name: Commit coverage badge
         uses: stefanzweifel/git-auto-commit-action@v4
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         with:
           commit_message: "Update coverage badge"
           file_pattern: "./badge.svg"
           create_branch: true
           branch: badges
-          # status_options: "--untracked-files=normal"
-          # add_options: "--all"
           push_options: "--force"
 
   verify-quality:
