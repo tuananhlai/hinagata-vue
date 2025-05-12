@@ -50,12 +50,14 @@ it("should expose the `close` function to DialogContent's default slot", async (
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent v-slot="{ close }">
+          <DialogTitle>Dialog Title</DialogTitle>
           <button @click="close">Close Dialog</button>
         </DialogContent>
         `,
         components: {
           DialogTrigger,
           DialogContent,
+          DialogTitle,
         },
       }),
     },
@@ -86,6 +88,7 @@ describe("WAI-ARIA Compliance", () => {
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
+          <DialogTitle>Dialog Title</DialogTitle>
           <button>Focusable 1</button>
           <button>Focusable 2</button>
         </DialogContent>
@@ -93,6 +96,7 @@ describe("WAI-ARIA Compliance", () => {
           components: {
             DialogTrigger,
             DialogContent,
+            DialogTitle,
           },
         }),
       },
@@ -111,11 +115,13 @@ describe("WAI-ARIA Compliance", () => {
         default: h({
           template: `
           <DialogContent>
+            <DialogTitle>Dialog Title</DialogTitle>
             <button>Focusable 1</button>
           </DialogContent>
           `,
           components: {
             DialogContent,
+            DialogTitle,
           },
         }),
       },
