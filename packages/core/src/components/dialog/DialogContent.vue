@@ -48,7 +48,11 @@ const close = () => dialogRootContext.onOpenChange(false);
       :class="[$style.overlay, classes?.overlay]"
       data-testid="overlay"
     >
-      <RekaDialogContent :class="[$style.content, classes?.content]">
+      <!-- https://reka-ui.com/docs/components/dialog#description -->
+      <RekaDialogContent
+        :class="[$style.content, classes?.content]"
+        :aria-describedby="undefined"
+      >
         <slot :close="close" />
       </RekaDialogContent>
     </DialogOverlay>
