@@ -27,9 +27,7 @@ jobs:
       # Generate coverage badge and push it to the `badges` branch. These two
       # steps are only run on the `main` branch.
       - name: Checkout badges branch
-        uses: actions/checkout@v4
-        with:
-          ref: badges
+        run: git checkout badges
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
         # if: github.ref == 'refs/heads/main' && (success() || failure())
