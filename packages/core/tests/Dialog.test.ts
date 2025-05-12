@@ -2,7 +2,13 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
 import { describe, expect, it } from "vitest";
 import { h, nextTick } from "vue";
-import { Dialog, DialogContent, DialogProps, DialogTrigger } from "../src";
+import {
+  Dialog,
+  DialogContent,
+  DialogProps,
+  DialogTitle,
+  DialogTrigger,
+} from "../src";
 
 it("should open the dialog when the trigger is clicked", async () => {
   await renderExampleDialog();
@@ -137,12 +143,13 @@ const renderExampleDialog = async (props?: DialogProps) => {
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
-          <p>${exampleDialogContent}</p>
+          <DialogTitle>${exampleDialogContent}</DialogTitle>
         </DialogContent>
         `,
         components: {
           DialogTrigger,
           DialogContent,
+          DialogTitle,
         },
       }),
     },

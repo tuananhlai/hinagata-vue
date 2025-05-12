@@ -39,7 +39,6 @@ jobs:
         # if: github.ref == 'refs/heads/main'
         with:
           commit_message: "Update coverage badge"
-          create_branch: true
           branch: badges
 
   verify-quality:
