@@ -28,19 +28,19 @@ jobs:
       # steps are only run on the `main` branch.
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
-        if: github.ref == 'refs/heads/main' && (success() || failure())
+        # if: github.ref == 'refs/heads/main' && (success() || failure())
         with:
-          summary-path: packages/core/coverage/coverage-summary.json
           result-type: statements
           upload-badge: false
+          vitest-config-path: packages/core/vitest.config.js
+          summary-path: packages/core/coverage/coverage-summary.json
       - name: Commit coverage badge
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         with:
           commit_message: "Update coverage badge"
           create_branch: true
           branch: badges
-          file_pattern: "./badge.svg"
 
   verify-quality:
     runs-on: ubuntu-latest
