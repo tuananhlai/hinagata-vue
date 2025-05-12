@@ -35,6 +35,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         if: github.ref == 'refs/heads/main'
         with:
+          commit-message: "Update coverage badges"
+          create_branch: true
+          branch: badges
           file_pattern: "./badge.svg"
 
   verify-quality:
