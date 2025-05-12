@@ -2,7 +2,13 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
 import { describe, expect, it } from "vitest";
 import { h, nextTick } from "vue";
-import { Dialog, DialogContent, DialogProps, DialogTrigger } from "../src";
+import {
+  Dialog,
+  DialogContent,
+  DialogProps,
+  DialogTitle,
+  DialogTrigger,
+} from "../src";
 
 it("should open the dialog when the trigger is clicked", async () => {
   await renderExampleDialog();
@@ -44,12 +50,14 @@ it("should expose the `close` function to DialogContent's default slot", async (
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent v-slot="{ close }">
+          <DialogTitle>Dialog Title</DialogTitle>
           <button @click="close">Close Dialog</button>
         </DialogContent>
         `,
         components: {
           DialogTrigger,
           DialogContent,
+          DialogTitle,
         },
       }),
     },
@@ -80,6 +88,7 @@ describe("WAI-ARIA Compliance", () => {
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
+          <DialogTitle>Dialog Title</DialogTitle>
           <button>Focusable 1</button>
           <button>Focusable 2</button>
         </DialogContent>
@@ -87,6 +96,7 @@ describe("WAI-ARIA Compliance", () => {
           components: {
             DialogTrigger,
             DialogContent,
+            DialogTitle,
           },
         }),
       },
@@ -105,11 +115,13 @@ describe("WAI-ARIA Compliance", () => {
         default: h({
           template: `
           <DialogContent>
+            <DialogTitle>Dialog Title</DialogTitle>
             <button>Focusable 1</button>
           </DialogContent>
           `,
           components: {
             DialogContent,
+            DialogTitle,
           },
         }),
       },
@@ -137,12 +149,13 @@ const renderExampleDialog = async (props?: DialogProps) => {
           <button>Open Dialog</button>
         </DialogTrigger>
         <DialogContent>
-          <p>${exampleDialogContent}</p>
+          <DialogTitle>${exampleDialogContent}</DialogTitle>
         </DialogContent>
         `,
         components: {
           DialogTrigger,
           DialogContent,
+          DialogTitle,
         },
       }),
     },
