@@ -24,6 +24,22 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           working-directory: packages/core
+      - name: Publish Results Badge
+        uses: wjervis7/vitest-badge-action@v1.0.0
+        if: github.ref == 'refs/heads/main' && (success() || failure())
+        with:
+          summary-path: packages/core/coverage/coverage-summary.json
+          result-type: statements
+          upload-badge: false
+      - name: Commit coverage badge
+        uses: stefanzweifel/git-auto-commit-action@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          commit-message: "Update coverage badges"
+          create_branch: true
+          branch: badges
+          file_pattern: "./badge.svg"
+
   verify-quality:
     runs-on: ubuntu-latest
     steps:
