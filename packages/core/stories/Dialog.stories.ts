@@ -61,6 +61,33 @@ export const Default: Story = {
   }),
 };
 
+export const VerticalOverflow: Story = {
+  render: () => ({
+    template: `
+      <Dialog default-open>
+        <DialogTrigger>
+          <Button>Open</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogBody>
+            <Placeholder height="800px" />
+          </DialogBody>
+        </DialogContent>
+      </Dialog>
+    `,
+    components: {
+      Dialog,
+      DialogTrigger,
+      DialogContent,
+      DialogTitle,
+      DialogBody,
+      Placeholder,
+      Button,
+    },
+  }),
+};
+
 export const VisualTest: Story = {
   parameters: {
     chromatic: {
@@ -96,38 +123,6 @@ export const VisualTest: Story = {
       DialogBody,
       DialogActions,
       DialogClose,
-    },
-  }),
-};
-
-export const VisualTestOverflowY: Story = {
-  parameters: {
-    chromatic: {
-      disableSnapshot: false,
-    },
-  },
-  render: () => ({
-    template: `
-      <Dialog default-open>
-        <DialogTrigger>
-          <Button>Open</Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogTitle>Dialog Title</DialogTitle>
-          <DialogBody>
-            <Placeholder height="800px" />
-          </DialogBody>
-        </DialogContent>
-      </Dialog>
-    `,
-    components: {
-      Dialog,
-      DialogTrigger,
-      DialogContent,
-      DialogTitle,
-      DialogBody,
-      Placeholder,
-      Button,
     },
   }),
 };
