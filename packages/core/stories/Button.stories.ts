@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import { useTemplateRef, watch } from "vue";
 import { Button } from "../src";
+import VisualTestGrid from "./utils/VisualTestGrid.vue";
 
 const meta = {
   title: "Button",
@@ -30,5 +31,26 @@ export const Default: Story = {
       <Button variant="secondary">Click me</Button>
       <Button variant="tertiary">Click me</Button>
     </div>`,
+  }),
+};
+
+export const VisualTest: Story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
+  render: () => ({
+    components: { Button, VisualTestGrid },
+    template: `
+      <VisualTestGrid :cellWidth="100">
+        <Button>Button</Button>
+        <Button variant="secondary">Button</Button>
+        <Button variant="tertiary">Button</Button>
+        <Button disabled>Button</Button>
+        <Button variant="secondary" disabled>Button</Button>
+        <Button variant="tertiary" disabled>Button</Button>
+      </VisualTestGrid>
+    `,
   }),
 };

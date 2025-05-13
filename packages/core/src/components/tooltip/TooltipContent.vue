@@ -39,15 +39,13 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
 
 <style lang="scss" module>
 .root {
-  border: 1px solid
-    var(--bw-tooltip-content-border-color, var(--bw-color-zinc-300));
   border-radius: var(--bw-radius-md);
   color: var(--bw-tooltip-content-color, var(--bw-color-zinc-900));
   background-color: var(
     --bw-tooltip-content-background-color,
     var(--bw-color-white)
   );
-  padding: var(--bw-space-2-5) var(--bw-space-3);
+  padding: var(--bw-space-2) var(--bw-space-2-5);
   font-size: var(--bw-font-sm);
   box-shadow: var(--bw-shadow-md);
 }

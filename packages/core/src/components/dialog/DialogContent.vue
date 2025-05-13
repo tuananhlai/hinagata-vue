@@ -68,6 +68,7 @@ const close = () => dialogRootContext.onOpenChange(false);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 
   padding: var(--bw-space-2);
   background-color: alpha(var(--bw-color-zinc-950), 25);

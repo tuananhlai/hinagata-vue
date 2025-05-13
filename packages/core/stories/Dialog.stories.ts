@@ -10,6 +10,7 @@ import {
   TextField,
   DialogClose,
 } from "../src";
+import Placeholder from "./utils/Placeholder.vue";
 
 const meta = {
   title: "Dialog",
@@ -61,6 +62,11 @@ export const Default: Story = {
 };
 
 export const VisualTest: Story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
   render: () => ({
     template: `
       <Dialog default-open>
@@ -90,6 +96,38 @@ export const VisualTest: Story = {
       DialogBody,
       DialogActions,
       DialogClose,
+    },
+  }),
+};
+
+export const VisualTestOverflowY: Story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
+  render: () => ({
+    template: `
+      <Dialog default-open>
+        <DialogTrigger>
+          <Button>Open</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogBody>
+            <Placeholder height="800px" />
+          </DialogBody>
+        </DialogContent>
+      </Dialog>
+    `,
+    components: {
+      Dialog,
+      DialogTrigger,
+      DialogContent,
+      DialogTitle,
+      DialogBody,
+      Placeholder,
+      Button,
     },
   }),
 };

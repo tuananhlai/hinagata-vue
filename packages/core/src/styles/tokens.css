@@ -166,12 +166,12 @@
   --bw-button-primary-background-color: var(--bw-color-primary);
   --bw-button-primary-color: var(--bw-color-white);
   --bw-button-primary-hover-background-color: var(--bw-color-pink-600);
-  --bw-button-secondary-background-color: var(--bw-color-pink-200);
-  --bw-button-secondary-color: var(--bw-color-pink-600);
-  --bw-button-secondary-hover-background-color: var(--bw-color-pink-300);
+  --bw-button-secondary-background-color: var(--bw-color-white);
+  --bw-button-secondary-color: var(--bw-color-primary);
+  --bw-button-secondary-hover-background-color: var(--bw-color-pink-50);
   --bw-button-tertiary-background-color: transparent;
   --bw-button-tertiary-color: var(--bw-color-primary);
-  --bw-button-tertiary-hover-background-color: var(--bw-color-pink-100);
+  --bw-button-tertiary-hover-background-color: var(--bw-color-pink-50);
 
   --bw-checkbox-background-color: var(--bw-color-white);
   --bw-checkbox-checked-background-color: var(--bw-color-primary);
@@ -179,9 +179,8 @@
   --bw-radio-background-color: var(--bw-color-white);
   --bw-radio-checked-background-color: var(--bw-color-primary);
 
-  --bw-tooltip-content-border-color: var(--bw-color-zinc-300);
-  --bw-tooltip-content-color: var(--bw-color-zinc-900);
-  --bw-tooltip-content-background-color: var(--bw-color-white);
+  --bw-tooltip-content-color: var(--bw-color-white);
+  --bw-tooltip-content-background-color: var(--bw-color-zinc-700);
 
   --bw-dropdown-menu-content-border-color: var(--bw-color-zinc-300);
   --bw-dropdown-menu-content-color: var(--bw-color-zinc-900);

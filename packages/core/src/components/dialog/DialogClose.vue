@@ -29,12 +29,16 @@ const buttonSize = 20;
   top: var(--bw-space-3);
   right: var(--bw-space-3);
   cursor: pointer;
-  color: var(--bw-color-zinc-950);
+  color: var(--bw-color-zinc-500);
   background-color: transparent;
   border: none;
   padding: 0;
   display: grid;
   place-content: center;
+
+  &:where(:hover) {
+    color: var(--bw-color-zinc-950);
+  }
 
   &:where(:not(:focus-visible)) {
     outline: none;
