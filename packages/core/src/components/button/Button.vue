@@ -45,6 +45,7 @@ const forwarded = useForwardPropsEmits(props, emit);
   padding: var(--bw-space-1-5) var(--bw-space-3);
   border: 1px solid transparent;
   box-shadow: var(--bw-shadow-sm);
+  outline-offset: 2px;
   --btn-hover-background-color: initial;
 
   &:where([data-variant="primary"]) {

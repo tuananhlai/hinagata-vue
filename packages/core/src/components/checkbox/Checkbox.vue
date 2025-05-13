@@ -55,6 +55,10 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
   &:where(:hover:not([data-disabled])) {
     cursor: pointer;
   }
+
+  &:where([data-disabled]) {
+    opacity: 0.4;
+  }
 }
 
 .checkboxRoot {
@@ -70,7 +74,7 @@ const forwardedPropEmits = useForwardPropsEmits(props, emits);
   border-radius: var(--bw-space-1);
   padding: 0;
 
-  &:where(:hover) {
+  &:where(:hover:not([data-disabled])) {
     background-color: var(--bw-color-zinc-50);
   }
 

@@ -23,7 +23,7 @@ defineSlots<VisualTestGridSlots>();
       gridTemplateColumns: `repeat(auto-fill, minmax(${cellWidth}px, 1fr))`,
       gap: '24px',
       alignItems: 'center',
-      justifyItems: 'center',
+      justifyItems: 'start',
     }"
   >
     <slot />

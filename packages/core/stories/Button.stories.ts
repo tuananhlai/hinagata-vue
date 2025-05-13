@@ -39,6 +39,9 @@ export const VisualTest: Story = {
     chromatic: {
       disableSnapshot: false,
     },
+    pseudo: {
+      hover: ".hover > *",
+    },
   },
   render: () => ({
     components: { Button, VisualTestGrid },
@@ -50,6 +53,12 @@ export const VisualTest: Story = {
         <Button disabled>Button</Button>
         <Button variant="secondary" disabled>Button</Button>
         <Button variant="tertiary" disabled>Button</Button>
+      </VisualTestGrid>
+      
+      <VisualTestGrid style="margin-top: 40px" class="hover" :cellWidth="100">
+        <Button>Button</Button>
+        <Button variant="secondary">Button</Button>
+        <Button variant="tertiary">Button</Button>
       </VisualTestGrid>
     `,
   }),
