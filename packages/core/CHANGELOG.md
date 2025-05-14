@@ -1,5 +1,12 @@
 # @tuananhlai/sample-design-system
 
+## 0.0.6
+
+### Patch Changes
+
+- 6eb905b: feat/dialog: initialize
+- 7c78c5a: feat/dropdown-menu: initialize
+
 ## 0.0.5
 
 ### Patch Changes

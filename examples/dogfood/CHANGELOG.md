@@ -1,5 +1,13 @@
 # dogfood
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [6eb905b]
+- Updated dependencies [7c78c5a]
+  - @tuananhlai/sample-design-system@0.0.6
+
 ## 0.0.3
 
 ### Patch Changes
