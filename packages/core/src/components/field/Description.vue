@@ -1,6 +1,8 @@
 <script lang="ts">
 export interface DescriptionProps {
   id?: string;
+  /** True to use disabled styles. */
+  disabled?: boolean;
 }
 
 export interface DescriptionSlots {
@@ -24,13 +26,23 @@ onMounted(() =>
 </script>
 
 <template>
-  <div :id="descriptionID" :class="$style.root">
+  <div
+    :id="descriptionID"
+    :class="$style.root"
+    :data-disabled="disabled || undefined"
+  >
     <slot />
   </div>
 </template>
 
 <style lang="scss" module>
 .root {
-  color: var(--bw-color-zinc-700);
+  color: var(--bw-color-zinc-500);
+  font-size: var(--bw-font-sm);
+  line-height: var(--bw-line-5);
+
+  &:where([data-disabled]) {
+    opacity: 0.5;
+  }
 }
 </style>

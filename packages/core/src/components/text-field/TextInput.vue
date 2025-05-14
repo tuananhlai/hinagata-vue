@@ -195,10 +195,18 @@ defineExpose<TextInputExpose>({
     color: var(--bw-color-zinc-400);
   }
 
-  &:focus {
+  &:where(:focus) {
     outline: 2px solid var(--bw-color-primary);
     outline-offset: -2px;
     border-color: var(--bw-color-primary);
+  }
+
+  &:where(:disabled) {
+    opacity: 0.5;
+  }
+
+  &:where([data-invalid]) {
+    border-color: var(--bw-color-red-500);
   }
 }
 </style>

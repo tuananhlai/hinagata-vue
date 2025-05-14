@@ -45,18 +45,26 @@ defineExpose<TextFieldExpose>({
 
 <template>
   <Field :class="$style.root">
-    <Label v-if="slots.label || props.label">
+    <Label
+      v-if="slots.label || props.label"
+      :required="required"
+      :disabled="disabled"
+    >
       <slot name="label">
         {{ props.label }}
       </slot>
     </Label>
-    <TextInput ref="text-input-ref" v-bind="forwarded" />
     <Description v-if="slots.description || props.description">
       <slot name="description">
         {{ props.description }}
       </slot>
     </Description>
-    <ErrorMessage v-if="slots.errorMessage || props.errorMessage">
+    <TextInput :class="$style.input" ref="text-input-ref" v-bind="forwarded" />
+    <ErrorMessage
+      v-if="slots.errorMessage || props.errorMessage"
+      :class="$style.errorMessage"
+      :disabled="disabled"
+    >
       <slot name="errorMessage">
         {{ props.errorMessage }}
       </slot>
@@ -68,5 +76,13 @@ defineExpose<TextFieldExpose>({
 .root {
   display: flex;
   flex-direction: column;
+}
+
+.input {
+  margin-top: var(--bw-space-2);
+}
+
+.errorMessage {
+  margin-top: var(--bw-space-2);
 }
 </style>
