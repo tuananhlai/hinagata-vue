@@ -1,7 +1,7 @@
 <script lang="ts">
 export interface DialogTriggerSlots {
   /**
-   * The trigger element for the dialog.
+   * The trigger element of the dialog.
    *
    * @example
    * <Button>Open Dialog</Button>

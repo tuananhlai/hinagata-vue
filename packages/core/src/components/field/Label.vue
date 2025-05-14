@@ -33,6 +33,7 @@ const componentAs: ComputedRef<"span" | "label"> = computed(() => {
 
 <template>
   <Label
+    :class="$style.root"
     :as="componentAs"
     :id="labelID"
     :for="fieldContextValue?.formControlID.value"
@@ -40,11 +41,22 @@ const componentAs: ComputedRef<"span" | "label"> = computed(() => {
     :data-disabled="props.disabled || undefined"
   >
     <slot />
+
+    <span v-if="props.required" :class="$style.required"> *</span>
   </Label>
 </template>
 
 <style lang="scss" module>
 .root {
   font-weight: var(--bw-weight-medium);
+  line-height: var(--bw-line-6);
+
+  &:where([data-disabled]) {
+    opacity: 0.4;
+  }
+}
+
+.required {
+  color: var(--bw-color-red-500);
 }
 </style>

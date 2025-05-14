@@ -10,7 +10,9 @@ export interface VisualTestGridSlots {
 </script>
 
 <script lang="ts" setup>
-defineProps<VisualTestGridProps>();
+withDefaults(defineProps<VisualTestGridProps>(), {
+  cellWidth: 200,
+});
 defineSlots<VisualTestGridSlots>();
 </script>
 
@@ -21,7 +23,7 @@ defineSlots<VisualTestGridSlots>();
       gridTemplateColumns: `repeat(auto-fill, minmax(${cellWidth}px, 1fr))`,
       gap: '24px',
       alignItems: 'center',
-      justifyItems: 'center',
+      justifyItems: 'start',
     }"
   >
     <slot />

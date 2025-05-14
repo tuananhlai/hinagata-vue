@@ -1,6 +1,8 @@
 <script lang="ts">
 export interface ErrorMessageProps {
   id?: string;
+  /** True to use disabled styles. */
+  disabled?: boolean;
 }
 
 export interface ErrorMessageSlots {
@@ -25,7 +27,11 @@ onMounted(() =>
 </script>
 
 <template>
-  <div :id="errorMessageID" :class="$style.root">
+  <div
+    :id="errorMessageID"
+    :class="$style.root"
+    :data-disabled="disabled || undefined"
+  >
     <slot />
   </div>
 </template>
@@ -33,5 +39,10 @@ onMounted(() =>
 <style lang="scss" module>
 .root {
   color: var(--bw-color-red-500);
+  font-size: var(--bw-font-sm);
+
+  &:where([data-disabled]) {
+    opacity: 0.5;
+  }
 }
 </style>

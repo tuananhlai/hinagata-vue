@@ -5,6 +5,7 @@ import {
   CheckboxGroupField,
   Dialog,
   DialogContent,
+  DialogTitle,
   DialogTrigger,
   Popover,
   PopoverContent,
@@ -71,7 +72,13 @@ const switchTheme = () => {
         <Button>Open Dialog</Button>
       </DialogTrigger>
       <DialogContent>
-        <p>Dialog content</p>
+        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogBody>
+          <p>Dialog content</p>
+        </DialogBody>
+        <DialogActions>
+          <Button>Close</Button>
+        </DialogActions>
       </DialogContent>
     </Dialog>
   </div>
