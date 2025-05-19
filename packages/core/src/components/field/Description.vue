@@ -11,17 +11,25 @@ export interface DescriptionSlots {
 </script>
 
 <script lang="ts" setup>
-import { useId } from "reka-ui";
-import { onMounted, onUnmounted } from "vue";
+import { computed, useId, watch } from "vue";
 import { useFieldContext } from "./FieldContext";
 
 const props = defineProps<DescriptionProps>();
 defineSlots<DescriptionSlots>();
 
-const descriptionID = useId(props.id);
+const generatedID = useId();
+const descriptionID = computed(() => props.id ?? generatedID);
+
 const fieldContextValue = useFieldContext();
-onMounted(() =>
-  onUnmounted(fieldContextValue?.registerDescription(descriptionID))
+watch(
+  descriptionID,
+  (value, _, onCleanup) => {
+    if (fieldContextValue == null) return;
+
+    const unregister = fieldContextValue.registerDescription(value);
+    onCleanup(() => unregister());
+  },
+  { immediate: true }
 );
 </script>
 

@@ -94,13 +94,13 @@ export interface TextInputExpose {
 <script setup lang="ts">
 import { AriaLabellingProps } from "@/utils/AriaLabellingProps";
 import clsx from "clsx";
-import { useId } from "reka-ui";
 import {
+  computed,
   HTMLAttributes,
   InputHTMLAttributes,
-  onMounted,
-  onUnmounted,
+  useId,
   useTemplateRef,
+  watch,
 } from "vue";
 import { useFieldContext } from "../field/FieldContext";
 
@@ -114,9 +114,20 @@ const onInput = (event: Event) => {
   emits("update:modelValue", target.value);
 };
 
-const inputID = useId(props.id);
+const generatedID = useId();
+const inputID = computed(() => props.id ?? generatedID);
+
 const fieldContextValue = useFieldContext();
-onMounted(() => onUnmounted(fieldContextValue?.registerFormControl(inputID)));
+watch(
+  inputID,
+  (value, _, onCleanup) => {
+    if (fieldContextValue == null) return;
+
+    const unregister = fieldContextValue.registerFormControl(value);
+    onCleanup(() => unregister());
+  },
+  { immediate: true }
+);
 
 const inputRef = useTemplateRef<HTMLInputElement>("input-ref");
 

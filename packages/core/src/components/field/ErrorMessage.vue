@@ -11,18 +11,26 @@ export interface ErrorMessageSlots {
 </script>
 
 <script lang="ts" setup>
-import { useId } from "reka-ui";
-import { onMounted, onUnmounted } from "vue";
+import { computed, useId, watch } from "vue";
 import { useFieldContext } from "./FieldContext";
 
 const props = defineProps<ErrorMessageProps>();
 defineSlots<ErrorMessageSlots>();
 
-const errorMessageID = useId(props.id);
+const generatedID = useId();
+const errorMessageID = computed(() => props.id ?? generatedID);
+
 const fieldContextValue = useFieldContext();
 
-onMounted(() =>
-  onUnmounted(fieldContextValue?.registerDescription(errorMessageID))
+watch(
+  errorMessageID,
+  (value, _, onCleanup) => {
+    if (fieldContextValue == null) return;
+
+    const unregister = fieldContextValue.registerDescription(value);
+    onCleanup(() => unregister());
+  },
+  { immediate: true }
 );
 </script>
 
